@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PULSE — оптимизатор ПК для игр</title>
+<meta name="description" content="Бесплатный оптимизатор ПК для геймеров: буст в один клик, оверлей с FPS и честные отчёты после каждой игры. На русском, без рекламы.">
+<meta property="og:title" content="PULSE — оптимизатор ПК для игр">
+<meta property="og:description" content="Бесплатный оптимизатор ПК для геймеров: буст в один клик, оверлей с FPS и честные отчёты после каждой игры. На русском, без рекламы.">
+<meta property="og:image" content="dashboard.jpg">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+a{color:#ff5a68}a:hover{color:#ff8a94}
+</style>
+<style>html{scroll-behavior:smooth} summary::marker{color:#ff2a3d} a:focus-visible{outline:2px solid #ff2a3d;outline-offset:3px}</style>
+</head>
+<body>
+<div style="background: #000000; color: #f2f2f2; font-family: Inter, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.6; width: 100%; overflow: hidden">
+
+  <!-- Навигация -->
+  <header style="border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #ffffff">
+        <img src="icon.png" alt="" style="width: 36px; height: 36px; border-radius: 10px">
+        <span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.18em">PULSE</span>
+      </a>
+      <nav aria-label="Разделы" style="display: flex; flex-wrap: wrap; gap: 26px; font-size: 14.5px">
+        <a href="#features" style="color: #bdbdbd; text-decoration: none">Возможности</a>
+        <a href="#reports" style="color: #bdbdbd; text-decoration: none">Отчёты</a>
+        <a href="#safety" style="color: #bdbdbd; text-decoration: none">Безопасность</a>
+        <a href="#pricing" style="color: #bdbdbd; text-decoration: none">Цены</a>
+        <a href="#faq" style="color: #bdbdbd; text-decoration: none">Вопросы</a>
+        <a href="changelog.html" style="color: #bdbdbd; text-decoration: none">Что нового</a>
+      </nav>
+      <a href="download.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 12px; background: #ffffff; color: #000000; font-weight: 700; font-size: 14.5px; text-decoration: none">Скачать бесплатно</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" style="position: relative">
+    <svg aria-hidden="true" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.55">
+      <g fill="none" stroke-width="1">
+        <g stroke="rgba(255,255,255,0.09)">
+          <line x1="860" y1="230" x2="1200" y2="0"/><line x1="860" y1="230" x2="1200" y2="230"/><line x1="860" y1="230" x2="1200" y2="560"/>
+          <line x1="860" y1="230" x2="860" y2="0"/><line x1="860" y1="230" x2="560" y2="0"/><line x1="860" y1="230" x2="420" y2="300"/>
+          <line x1="860" y1="230" x2="520" y2="700"/><line x1="860" y1="230" x2="900" y2="700"/><line x1="860" y1="230" x2="1200" y2="700"/>
+          <circle cx="860" cy="230" r="70"/><circle cx="860" cy="230" r="150"/><circle cx="860" cy="230" r="250"/><circle cx="860" cy="230" r="380"/><circle cx="860" cy="230" r="540"/>
+        </g>
+        <g stroke="#ff2a3d" stroke-opacity="0.85">
+          <path d="M1001 279 Q1040 300 1075 340"/><path d="M1075 340 Q1100 380 1110 420"/><line x1="1001" y1="279" x2="1110" y2="420" stroke-opacity="0.4"/>
+        </g>
+      </g>
+    </svg>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; align-items: flex-start; gap: 26px">
+      <div style="display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; font-size: 13px; color: #d6d6d6">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #ff2a3d"></span>
+        Бесплатно · Windows 10 и 11 · на русском
+      </div>
+      <h1 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 76px); line-height: 1.04; letter-spacing: -0.02em; max-width: 900px">Больше FPS. <span style="color: #ff2a3d">И ты увидишь, сколько именно.</span></h1>
+      <p style="margin: 0; max-width: 640px; font-size: 19px; color: #c4c4c4">PULSE — оптимизатор ПК для геймеров: буст в один клик, оверлей с FPS поверх игры и честный отчёт после каждой катки. Всё, что он меняет, откатывается одной кнопкой.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+        <a href="download.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 14px; background: #ffffff; color: #000000; font-weight: 700; font-size: 16px; text-decoration: none">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
+          Скачать для Windows
+        </a>
+        <a href="#features" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.22); color: #ffffff; font-weight: 600; text-decoration: none">Что умеет PULSE</a>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #8f8f8f">Версия 1.4 · около 75 МБ · без рекламы</p>
+    </div>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+      <div style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.14); overflow: hidden; box-shadow: 0 40px 120px -30px rgba(255,42,61,0.35)">
+        <img src="dashboard.jpg" alt="Главный экран PULSE: загрузка процессора, видеокарты, памяти и диска, график нагрузки и сведения о системе" style="display: block; width: 100%; height: auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Коротко -->
+  <section aria-label="Коротко" style="border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 34px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px">
+      <div><div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">1 клик</div><div style="color: #a8a8a8; font-size: 14.5px">буст системы перед игрой</div></div>
+      <div><div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">1 кнопка</div><div style="color: #a8a8a8; font-size: 14.5px">чтобы вернуть всё как было</div></div>
+      <div><div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">Каждая игра</div><div style="color: #a8a8a8; font-size: 14.5px">записывается в отчёт сама</div></div>
+      <div><div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">0 ₸</div><div style="color: #a8a8a8; font-size: 14.5px">за всё основное</div></div>
+    </div>
+  </section>
+
+  <!-- Возможности -->
+  <section id="features">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 40px">
+      <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">ВОЗМОЖНОСТИ</p>
+      <h2 style="margin: 0 0 48px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 46px); line-height: 1.12; max-width: 760px">Всё, что нужно перед игрой — в одном окне</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px">
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Буст в один клик</h3>
+          <p style="margin: 0; color: #aaaaaa">Схема питания «Максимум», игровой режим, без фоновой записи Xbox, очистка мусора и сброс DNS. Выбираешь, что включить.</p>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Любая игра из Steam</h3>
+          <p style="margin: 0; color: #aaaaaa">Кнопка «Играть»: буст, закрытие лишних программ, высокий приоритет, «Не беспокоить» — и откат после выхода из игры.</p>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h4M7 13h2"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Оверлей с FPS</h3>
+          <p style="margin: 0; color: #aaaaaa">FPS, загрузка процессора и видеокарты, температура и пинг поверх игры. Включается сочетанием Ctrl+Shift+F.</p>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Отчёт после игры</h3>
+          <p style="margin: 0; color: #aaaaaa">Средний FPS, 1% low, температуры и пинг за каждую сессию. И сравнение: сколько реально даёт буст именно в твоей игре.</p>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Проверка ПК</h3>
+          <p style="margin: 0; color: #aaaaaa">Версия микрокода процессора и BIOS, время без перезагрузки и точки восстановления Windows — с понятным объяснением.</p>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #0b0b0b">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/></svg>
+          <h3 style="margin: 16px 0 8px; font-size: 20px">Диск и автозагрузка</h3>
+          <p style="margin: 0; color: #aaaaaa">Что занимает место на диске и что стартует вместе с Windows. PULSE показывает и выключает, но ничего не удаляет сам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отчёты -->
+  <section id="reports">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 32px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 360px; min-width: 0">
+        <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">ОТЧЁТЫ</p>
+        <h2 style="margin: 0 0 20px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.12">Не верь на слово. Проверь.</h2>
+        <p style="margin: 0 0 16px; color: #c0c0c0; font-size: 17px">Большинство оптимизаторов обещают «+40% FPS» и ничего не доказывают. PULSE сам записывает каждую игру из твоего списка и после выхода показывает отчёт.</p>
+        <p style="margin: 0; color: #c0c0c0; font-size: 17px">Сыграй раз с бустом и раз без — и увидишь реальную разницу на своём компьютере. Если буст не помогает, PULSE так и скажет.</p>
+      </div>
+      <div style="flex: 1.4 1 520px; min-width: 0; border-radius: 18px; border: 1px solid rgba(255,255,255,0.14); overflow: hidden">
+        <img src="reports.jpg" alt="Отчёт PULSE после игры в Rust: средний FPS, 1% low, температура видеокарты, график FPS и сравнение с бустом и без" style="display: block; width: 100%; height: auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Оверлей и игры -->
+  <section aria-label="Игры и оверлей">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px 88px; display: flex; flex-wrap: wrap-reverse; gap: 48px; align-items: center">
+      <div style="flex: 1.4 1 520px; min-width: 0; position: relative; border-radius: 18px; border: 1px solid rgba(255,255,255,0.14); overflow: hidden">
+        <img src="games.jpg" alt="Раздел «Игры» в PULSE: карточки игр с кнопкой «Играть» и настройками перед запуском" style="display: block; width: 100%; height: auto">
+      </div>
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">ИГРЫ</p>
+        <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.12">Нажал «Играть» — остальное PULSE сделает сам</h2>
+        <p style="margin: 0; color: #c0c0c0; font-size: 17px">Добавь любую игру из Steam. Для Rust, Dota 2 и CS2 есть отдельные советы: параметры запуска и чек-лист настроек графики.</p>
+        <img src="overlay.png" alt="Оверлей PULSE поверх игры: FPS, загрузка CPU и GPU, температура, память и пинг" style="display: block; width: 250px; max-width: 100%; height: auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Безопасность -->
+  <section id="safety" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 32px">
+      <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">БЕЗОПАСНОСТЬ</p>
+      <h2 style="margin: 0 0 18px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.12; max-width: 800px">Честно о том, что PULSE меняет</h2>
+      <p style="margin: 0 0 44px; color: #b8b8b8; font-size: 17px; max-width: 760px">PULSE не трогает разгон, напряжения, вентиляторы, BIOS и драйверы. Он меняет только настройки Windows — и запоминает, как было до него.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
+        <div style="padding: 24px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1)">
+          <h3 style="margin: 0 0 8px; font-size: 18px">Откат одной кнопкой</h3>
+          <p style="margin: 0; color: #a8a8a8; font-size: 15px">Каждое изменение записывается. Раздел «Откат» возвращает всё к исходным значениям.</p>
+        </div>
+        <div style="padding: 24px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1)">
+          <h3 style="margin: 0 0 8px; font-size: 18px">Точка восстановления</h3>
+          <p style="margin: 0; color: #a8a8a8; font-size: 15px">Перед первым бустом PULSE создаёт точку восстановления Windows — страховка даже без самой программы.</p>
+        </div>
+        <div style="padding: 24px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1)">
+          <h3 style="margin: 0 0 8px; font-size: 18px">Не лезет в игры</h3>
+          <p style="margin: 0; color: #a8a8a8; font-size: 15px">Оверлей — отдельное окно поверх игры, а не вставка в неё. Приоритет меняется так же, как в диспетчере задач.</p>
+        </div>
+        <div style="padding: 24px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.1)">
+          <h3 style="margin: 0 0 8px; font-size: 18px">Открытый код</h3>
+          <p style="margin: 0; color: #a8a8a8; font-size: 15px">Исходники лежат на GitHub — любой может проверить, что делает программа. <a href="#">[ССЫЛКА НА GITHUB]</a></p>
+        </div>
+      </div>
+      <div style="margin-top: 28px; padding: 22px 24px; border-radius: 16px; background: #141414; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/></svg>
+        <p style="margin: 0; flex: 1 1 300px; color: #cfcfcf; font-size: 15px">При первом запуске Windows может написать «Windows защитил ваш компьютер». Так бывает у новых программ без платной цифровой подписи. Нажми «Подробнее» → «Выполнить в любом случае». Программа попросит права администратора — без них не работают настройки питания и очистка.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цены -->
+  <section id="pricing">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 32px">
+      <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">ЦЕНЫ</p>
+      <h2 style="margin: 0 0 14px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.12">Основное — бесплатно навсегда</h2>
+      <p style="margin: 0 0 40px; color: #b4b4b4; font-size: 17px; max-width: 680px">Pro — разовая покупка, без подписки. Платишь один раз и пользуешься всеми обновлениями.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; max-width: 900px">
+        <div style="padding: 32px; border-radius: 22px; border: 1px solid rgba(255,255,255,0.14); background: #0b0b0b; display: flex; flex-direction: column; gap: 16px">
+          <h3 style="margin: 0; font-size: 22px">PULSE</h3>
+          <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 40px">0 ₸</div>
+          <ul style="margin: 0; padding-left: 20px; color: #c4c4c4; display: flex; flex-direction: column; gap: 6px">
+            <li>Буст и откат одной кнопкой</li>
+            <li>До 3 игр с кнопкой «Играть»</li>
+            <li>Оверлей с FPS</li>
+            <li>Отчёты за последние 5 игр</li>
+            <li>Проверка ПК, диск, автозагрузка, очистка</li>
+          </ul>
+          <a href="download.html" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 12px; background: #ffffff; color: #000000; font-weight: 700; text-decoration: none">Скачать</a>
+        </div>
+        <div style="padding: 32px; border-radius: 22px; border: 1px solid #ff2a3d; background: #0b0b0b; display: flex; flex-direction: column; gap: 16px">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><h3 style="margin: 0; font-size: 22px">PULSE Pro</h3><span style="font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; border: 1px solid #ff2a3d; color: #ffffff">скоро</span></div>
+          <div style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 40px">1 490 ₸ <span style="font-family: Inter, sans-serif; font-size: 15px; font-weight: 500; color: #9a9a9a">один раз</span></div>
+          <ul style="margin: 0; padding-left: 20px; color: #c4c4c4; display: flex; flex-direction: column; gap: 6px">
+            <li>Всё из бесплатной версии</li>
+            <li>Сколько угодно игр</li>
+            <li>Вся история отчётов и сравнение «с бустом и без»</li>
+            <li>Отчёт картинкой — поделиться с друзьями</li>
+            <li>Темы и цвета интерфейса</li>
+            <li>Приоритетная поддержка</li>
+          </ul>
+          <a href="#community" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.22); color: #ffffff; font-weight: 600; text-decoration: none">Узнать первым</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 900px; margin: 0 auto; padding: 96px 32px">
+      <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #ff2a3d">ВОПРОСЫ</p>
+      <h2 style="margin: 0 0 36px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.12">Частые вопросы</h2>
+      <div style="display: flex; flex-direction: column">
+        <details style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 0">
+          <summary style="cursor: pointer; font-size: 18px; font-weight: 600">Сколько FPS прибавится?</summary>
+          <p style="margin: 12px 0 0; color: #b4b4b4">Зависит от компьютера и игры — где-то заметно, где-то почти ничего. Поэтому в PULSE есть отчёты: сыграй с бустом и без, и программа покажет реальную разницу на твоём ПК.</p>
+        </details>
+        <details style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 0">
+          <summary style="cursor: pointer; font-size: 18px; font-weight: 600">Могут ли забанить в игре?</summary>
+          <p style="margin: 12px 0 0; color: #b4b4b4">PULSE не изменяет файлы игр и не встраивается в них: оверлей — отдельное окно, а приоритет меняется так же, как в диспетчере задач Windows. Но решения античитов мы гарантировать не можем — если игра не даёт сменить приоритет, PULSE просто сообщит об этом.</p>
+        </details>
+        <details style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 0">
+          <summary style="cursor: pointer; font-size: 18px; font-weight: 600">Это безопасно для компьютера?</summary>
+          <p style="margin: 12px 0 0; color: #b4b4b4">PULSE меняет только настройки Windows и всё запоминает. Раздел «Откат» возвращает их, а точка восстановления страхует на крайний случай. Железо — разгон, напряжения, вентиляторы — программа не трогает.</p>
+        </details>
+        <details style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 0">
+          <summary style="cursor: pointer; font-size: 18px; font-weight: 600">Почему Windows предупреждает при запуске?</summary>
+          <p style="margin: 12px 0 0; color: #b4b4b4">У программы пока нет платной цифровой подписи, поэтому Windows не знает издателя. Исходный код открыт на GitHub — его можно проверить.</p>
+        </details>
+        <details style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 0">
+          <summary style="cursor: pointer; font-size: 18px; font-weight: 600">Какие нужны системы?</summary>
+          <p style="margin: 12px 0 0; color: #b4b4b4">Windows 10 или 11 (64-бит). Данные видеокарты сейчас показываются для NVIDIA; для AMD и Intel работает всё остальное.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Скачать / сообщество -->
+  <section id="download" style="position: relative; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div id="community" style="max-width: 1200px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+      <img src="icon.png" alt="" style="width: 76px; height: 76px; border-radius: 20px">
+      <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: clamp(30px, 5vw, 56px); line-height: 1.08">Попробуй PULSE сегодня</h2>
+      <p style="margin: 0; color: #b8b8b8; font-size: 17px; max-width: 560px">Бесплатно, на русском, без рекламы. Новости и обновления — в Telegram.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center">
+        <a href="download.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 14px; background: #ffffff; color: #000000; font-weight: 700; text-decoration: none">Скачать для Windows</a>
+        <a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.22); color: #ffffff; font-weight: 600; text-decoration: none">Telegram-канал [ССЫЛКА]</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; color: #8a8a8a; font-size: 13.5px">
+      <span>© 2026 PULSE</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px"><a href="download.html">Скачать</a><a href="changelog.html">Что нового</a><a href="privacy.html">Конфиденциальность</a><a href="#">Telegram</a><a href="#">GitHub</a></span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
