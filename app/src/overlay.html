@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<style>
+  :root{--hot:#ff2a3d}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:transparent;overflow:hidden;user-select:none}
+  body{font:12px/1.3 'Bahnschrift','Segoe UI',sans-serif;color:#fff;padding:4px}
+  .box{background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--hot);border-radius:12px;padding:10px 12px;width:224px}
+  .top{display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+  .fps{font-size:34px;font-weight:700;letter-spacing:.02em;line-height:1}
+  .fps.na{font-size:15px;color:#9a9a9a;font-weight:500}
+  .lbl{font-size:10px;letter-spacing:.18em;color:#9a9a9a}
+  .app{margin-left:auto;font-size:10px;color:#777;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .row{display:flex;justify-content:space-between;padding:2px 0;border-top:1px solid rgba(255,255,255,.06)}
+  .row span{color:#9a9a9a;letter-spacing:.08em;font-size:10.5px}
+  .row b{font-weight:600}
+  .hot{color:var(--hot)}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="top"><div class="fps na" id="fps">—</div><div class="lbl">FPS</div><div class="app" id="app"></div></div>
+  <div class="row"><span>CPU</span><b id="cpu">—</b></div>
+  <div class="row"><span>GPU</span><b id="gpu">—</b></div>
+  <div class="row"><span>ТЕМП GPU</span><b id="gt">—</b></div>
+  <div class="row"><span>RAM</span><b id="ram">—</b></div>
+  <div class="row"><span>ПИНГ</span><b id="ping">—</b></div>
+</div>
+<script src="overlay.js"></script>
+</body>
+</html>

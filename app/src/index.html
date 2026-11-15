@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:">
+<title>PULSE</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="web"></canvas>
+
+<header class="titlebar">
+  <div class="brand">
+    <img class="logo" src="icon.png" alt="">
+    <div><b>PULSE</b><span>PC Optimizer</span></div>
+  </div>
+  <div class="tb-right">
+    <button id="ovBtn" class="badge ov" title="Ctrl+Shift+F">◉ Оверлей</button>
+    <div id="adminBadge" class="badge">…</div>
+    <button class="wbtn" data-win="min"><svg viewBox="0 0 12 12"><path d="M2 6h8"/></svg></button>
+    <button class="wbtn" data-win="max"><svg viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7"/></svg></button>
+    <button class="wbtn close" data-win="close"><svg viewBox="0 0 12 12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="side">
+    <button class="nav active" data-page="dash"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg><span>Панель</span></button>
+    <button class="nav" data-page="boost"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span>Буст</span></button>
+    <button class="nav" data-page="games"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg><span>Игры</span></button>
+    <button class="nav" data-page="reports"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg><span>Отчёты</span></button>
+    <button class="nav" data-page="proc"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg><span>Процессы</span></button>
+    <button class="nav" data-page="startup"><svg viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></svg><span>Автозагрузка</span></button>
+    <button class="nav" data-page="clean"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15M10 11v6M14 11v6"/></svg><span>Очистка</span></button>
+    <button class="nav" data-page="disk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/></svg><span>Диск</span></button>
+    <div id="gameNav" class="game-nav"></div>
+    <button class="nav" data-page="restore"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg><span>Откат</span></button>
+    <button class="nav" data-page="health"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Проверка ПК</span></button>
+    <button class="nav" data-page="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Настройки</span></button>
+    <div class="side-foot">v1.3 · <span id="modeLabel">live</span></div>
+  </nav>
+
+  <main>
+    <!-- ПАНЕЛЬ -->
+    <section class="page active" id="page-dash">
+      <div class="head"><div><h1>Панель</h1><p>Состояние системы в реальном времени</p></div></div>
+      <div class="gauges">
+        <div class="card gauge" id="g-cpu"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50"/></svg><div class="g-in"><b>0%</b><span>Процессор</span></div><small class="g-sub">—</small></div>
+        <div class="card gauge" id="g-gpu"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50"/></svg><div class="g-in"><b>—</b><span>Видеокарта</span></div><small class="g-sub">—</small></div>
+        <div class="card gauge" id="g-ram"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50"/></svg><div class="g-in"><b>0%</b><span>Память</span></div><small class="g-sub">—</small></div>
+        <div class="card gauge" id="g-disk"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50"/></svg><div class="g-in"><b>0%</b><span>Диск C:</span></div><small class="g-sub">—</small></div>
+      </div>
+      <div class="row2">
+        <div class="card chart-card">
+          <div class="card-h"><h3>Нагрузка</h3><span class="legend"><i class="l-cpu"></i>CPU <i class="l-gpu"></i>GPU <span class="live"><i></i>LIVE</span></span></div>
+          <canvas id="cpuChart"></canvas>
+        </div>
+        <div class="card info">
+          <div class="card-h"><h3>Система</h3></div>
+          <div class="kv"><span>Процессор</span><b id="i-cpu">…</b></div>
+          <div class="kv"><span>Видеокарта</span><b id="i-gpu">…</b></div>
+          <div class="kv"><span>Память</span><b id="i-ram">…</b></div>
+          <div class="kv"><span>Система</span><b id="i-os">…</b></div>
+          <button class="btn primary wide" data-goto="boost"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Ускорить ПК</button>
+        </div>
+      </div>
+      <div class="row3">
+        <div class="card">
+          <div class="card-h"><h3>Температуры</h3></div>
+          <div class="temps">
+            <div class="temp"><span>Видеокарта</span><b id="t-gpu">—</b><small id="t-gpu-sub">—</small></div>
+            <div class="temp"><span>Датчик платы</span><b id="t-cpu">—</b><small id="t-cpu-sub">процессор</small></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3>Сеть</h3><span class="muted small">пинг</span></div>
+          <div id="pingList" class="pings"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- БУСТ -->
+    <section class="page" id="page-boost">
+      <div class="head"><div><h1>Буст</h1><p>Выбери твики и нажми кнопку. Всё можно откатить.</p></div><div class="boost-state" id="boostState"><i></i><span>…</span></div></div>
+      <div class="boost-wrap">
+        <div class="card boost-hero">
+          <button id="boostBtn" class="boost-btn">
+            <svg viewBox="0 0 200 200"><circle class="b-track" cx="100" cy="100" r="88"/><circle class="b-prog" cx="100" cy="100" r="88"/></svg>
+            <div class="b-core"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><b id="boostLabel">BOOST</b><span id="boostSub">готов к запуску</span></div>
+          </button>
+          <div class="term" id="term"><div class="t-line dim">&gt; ожидание команды_</div></div>
+        </div>
+        <div class="tweaks" id="tweakList"></div>
+      </div>
+    </section>
+
+    <!-- ИГРЫ -->
+    <section class="page" id="page-games">
+      <div class="head"><div><h1>Игры</h1><p>Одна кнопка: буст, закрытие лишнего, запуск через Steam и откат после выхода</p></div><div class="actions"><button class="btn primary" id="addGameBtn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Добавить игру</button></div></div>
+      <div class="games" id="gamesList"></div>
+    </section>
+
+    <!-- ОТЧЁТЫ -->
+    <section class="page" id="page-reports">
+      <div class="head"><div><h1>Отчёты</h1><p>PULSE сам записывает каждую игру из твоего списка: FPS, просадки, температуры и пинг</p></div><div class="live-sess" id="liveSess"></div></div>
+      <div class="rep-filter" id="repFilter"></div>
+      <div id="repEmpty" class="card empty-games" style="display:none"><div class="eg-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h2>Пока нет отчётов</h2><p class="muted">Добавь игру в разделе «Игры» и поиграй хотя бы минуту — после выхода из игры здесь появится отчёт. Для замера FPS скачай модуль FPS в Настройках.</p></div>
+      <div id="repBody">
+        <div class="card rep-detail">
+          <div class="rep-head"><div><h2 id="rdName">—</h2><span class="muted small" id="rdMeta"></span></div><span class="hpill" id="rdBoost"></span></div>
+          <div class="rep-tiles" id="rdTiles"></div>
+          <div class="card-h" style="margin-top:6px"><h3>По ходу игры</h3><span class="legend"><i class="l-cpu"></i>FPS <i class="l-gpu"></i>Темп. GPU</span></div>
+          <canvas id="repChart"></canvas>
+          <div class="rep-note" id="rdNote"></div>
+        </div>
+        <div class="rep-side">
+          <div class="card"><div class="card-h"><h3>С бустом и без</h3></div><div id="rdCompare"></div></div>
+          <div class="card rep-list-card"><div class="card-h"><h3>Все игры</h3></div><div id="repList" class="rep-list"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОЦЕССЫ -->
+    <section class="page" id="page-proc">
+      <div class="head">
+        <div><h1>Процессы</h1><p>Самые тяжёлые фоновые программы. Системные скрыты, чтобы ничего не сломать.</p></div>
+        <div class="actions"><button class="btn" id="procRefresh">Обновить</button><button class="btn danger" id="procKill">Закрыть выбранные</button></div>
+      </div>
+      <div class="card table-card"><div class="proc-head"><span></span><span>Программа</span><span>Копий</span><span>Память</span></div><div id="procList" class="proc-list"></div></div>
+    </section>
+
+    <!-- АВТОЗАГРУЗКА -->
+    <section class="page" id="page-startup">
+      <div class="head">
+        <div><h1>Автозагрузка</h1><p>Программы, которые запускаются вместе с Windows. Выключение работает как в диспетчере задач — ничего не удаляется.</p></div>
+        <div class="actions"><button class="btn" id="suRefresh">Обновить</button></div>
+      </div>
+      <div class="card table-card"><div id="suList" class="su-list"></div></div>
+    </section>
+
+    <!-- ОЧИСТКА -->
+    <section class="page" id="page-clean">
+      <div class="head"><div><h1>Очистка</h1><p>Выбери, что чистить. Занятые файлы пропускаются.</p></div></div>
+      <div class="clean-grid">
+        <div class="card clean-hero">
+          <span class="muted">Выбрано к очистке</span>
+          <div class="big" id="cleanTotal">—</div>
+          <div class="actions"><button class="btn" id="scanBtn">Сканировать</button><button class="btn primary" id="cleanBtn" disabled>Очистить</button></div>
+        </div>
+        <div class="card"><div class="card-h"><h3>Что чистить</h3></div><div id="cleanList" class="clean-list"><p class="muted">Нажми «Сканировать»</p></div></div>
+      </div>
+    </section>
+
+    <!-- ДИСК -->
+    <section class="page" id="page-disk">
+      <div class="head"><div><h1>Диск</h1><p>Что занимает место. PULSE ничего не удаляет — только показывает и открывает в Проводнике.</p></div></div>
+      <div class="drives" id="drives"></div>
+      <div class="card disk-card" id="diskCard" style="display:none">
+        <div class="disk-top"><div class="crumbs" id="crumbs"></div><div class="disk-sum" id="diskSum"></div></div>
+        <div id="diskProgress" class="disk-progress" style="display:none"><div class="dp-bar"><i></i></div><span id="dpText">Сканирую…</span><button class="btn small" id="dpCancel">Стоп</button></div>
+        <div id="diskList" class="disk-list"></div>
+      </div>
+      <div class="tip disk-tip">Частые пожиратели места: <b>Загрузки</b>, старые игры, видео. Системный мусор Windows безопасно чистит встроенная «Очистка диска» → «Очистить системные файлы». Папку <b>Windows</b> руками не трогай.</div>
+    </section>
+
+    <!-- НАСТРОЙКИ ИГР (заполняются из app.js) -->
+    <div id="gamePages"></div>
+
+    <!-- ОТКАТ -->
+    <section class="page" id="page-restore">
+      <div class="head"><div><h1>Откат</h1><p>Вернуть настройки Windows к тому, что было до PULSE</p></div></div>
+      <div class="card restore-card">
+        <div id="restoreList"></div>
+        <button class="btn danger wide" id="restoreBtn">Вернуть всё как было</button>
+      </div>
+    </section>
+
+    <!-- ПРОВЕРКА ПК -->
+    <section class="page" id="page-health">
+      <div class="head"><div><h1>Проверка ПК</h1><p>Микрокод процессора, BIOS и точки восстановления</p></div><div class="actions"><button class="btn" id="hRefresh">Обновить</button></div></div>
+      <div class="health-grid">
+        <div class="card hcard" id="hcCpu"><div class="card-h"><h3>Процессор и микрокод</h3><span class="hpill" id="hCpuPill">…</span></div><div id="hCpu" class="hbody"><p class="muted">Проверяю…</p></div></div>
+        <div class="card hcard"><div class="card-h"><h3>Плата и BIOS</h3></div><div id="hBios" class="hbody"><p class="muted">Проверяю…</p></div></div>
+        <div class="card hcard"><div class="card-h"><h3>Без перезагрузки</h3><span class="hpill" id="hUpPill"></span></div><div id="hUp" class="hbody"></div></div>
+        <div class="card hcard"><div class="card-h"><h3>Точки восстановления</h3></div><div id="hRp" class="hbody"><p class="muted">Проверяю…</p></div>
+          <div class="actions rp-actions"><button class="btn primary" id="rpCreate">Создать сейчас</button><button class="btn" id="rpEnable" style="display:none">Включить защиту системы</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- НАСТРОЙКИ -->
+    <section class="page" id="page-settings">
+      <div class="head"><div><h1>Настройки</h1><p>Внешний вид, звук, оверлей и трей</p></div></div>
+      <div class="set-grid">
+        <div class="card">
+          <div class="card-h"><h3>Цвет паутины</h3></div>
+          <div class="swatches" id="swatches"></div>
+          <label class="custom-color">Свой цвет <input type="color" id="customColor" value="#ff2a3d"></label>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3>Звук</h3></div>
+          <div class="opt" data-opt="snd-on"><div class="tx"><b>Звуки интерфейса</b><small>Кнопки, буст, предупреждения</small></div><div class="toggle"></div></div>
+          <div class="opt" data-opt="snd-web"><div class="tx"><b>Звук паутины</b><small>Тихий звон, когда задеваешь нити</small></div><div class="toggle"></div></div>
+          <div class="slider-row"><span>Громкость</span><input type="range" id="vol" min="0" max="100"><button class="btn small" id="sndTest">Проверить</button></div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3>Оверлей в игре</h3></div>
+          <p class="muted">FPS, загрузка и температура поверх игры. Включение: <b>Ctrl+Shift+F</b> или кнопка в шапке. Работает в оконном и «без рамки» режиме.</p>
+          <div class="pm-row"><span id="pmStatus" class="muted">Модуль FPS: проверяю…</span><button class="btn small" id="pmInstall">Скачать модуль FPS</button></div>
+          <div class="seg" id="ovPos"><button data-v="tl">Слева сверху</button><button data-v="tr">Справа сверху</button></div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3>Безопасность и трей</h3></div>
+          <div class="opt" data-opt="autorp"><div class="tx"><b>Точка восстановления перед бустом</b><small>Раз в неделю перед первым бустом или запуском игры PULSE создаст точку восстановления Windows</small></div><div class="toggle"></div></div>
+          <div class="opt" data-opt="tray"><div class="tx"><b>Сворачивать в трей при закрытии</b><small>Крестик прячет окно к часам, программа продолжает следить за системой</small></div><div class="toggle"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3>Поддержка</h3><span class="muted small" id="verLabel"></span></div>
+          <p class="muted">Если что-то сломалось — скопируй сведения и отправь разработчику. Там версия, железо и последние ошибки, без личных данных.</p>
+          <div class="actions" style="margin-top:14px"><button class="btn primary" id="diagCopy">Скопировать сведения</button><button class="btn" id="logsOpen">Открыть папку журнала</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modal" class="modal"><div class="modal-box"><h3 id="mTitle"></h3><p id="mText"></p><div class="actions"><button class="btn" id="mNo">Отмена</button><button class="btn primary" id="mYes">Да</button></div></div></div>
+<div id="gmodal" class="modal"><div class="modal-box gmodal-box">
+  <div class="gm-head"><h3 id="gmTitle">Добавить игру из Steam</h3><button class="wbtn" id="gmClose"><svg viewBox="0 0 12 12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></button></div>
+  <input id="gmSearch" class="gm-search" placeholder="Поиск игры…">
+  <div id="gmList" class="gm-list"></div>
+</div></div>
+<div id="toasts"></div>
+<script src="sound.js"></script>
+<script src="web.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
